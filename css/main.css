@@ -87,8 +87,8 @@ body {
 }
 
 #first-block-bg #header #header-content #menu a {
-    margin: 0 26px;
-    font-size: 18px;
+    margin: 0 16px;
+    font-size: 17px;
     text-decoration: none;
     color: rgb(255, 255, 255);
     border-bottom: 2px solid transparent;
@@ -103,21 +103,35 @@ body {
 
 #first-block-bg #header #header-content #call-back button {
     cursor: pointer;
-    padding: 10px 40px;
+    width: 137px;
+    padding: 7px 1px;
     outline: 0;
     background: transparent;
     border: 2px solid rgb(255, 255, 255);
     border-radius: 20px;
-    font-size: 18px;
+    font-size: 17px;
     color: white;
     transition: 0.4s;
 }
 
 #first-block-bg #header #header-content #call-back button:hover {
     border-color: #1a53a8;
-    color: #3982ee;
+    /*color: #3982ee;*/
+    background: #1a53a8;
 }
-
+#header-contacts {
+    text-align: right;
+}
+#header-content #header-contacts #contacts-title {
+    color: #1a53a8;
+    font-family: GilroyBold, sans-serif;
+    font-size: 20px;
+}
+#header-contacts #contacts-text {
+    color: white;
+    font-family: GilroyRegular, sans-serif;
+    font-size: 16px;
+}
 #main {
     padding-bottom: 552px;
     max-width: 1200px;
@@ -492,6 +506,7 @@ body {
     height: 100%;
     top: 0;
     left: 0;
+    transition: 0.2s;
 }
 
 #call-back-content {
