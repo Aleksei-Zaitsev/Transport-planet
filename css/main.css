@@ -272,6 +272,7 @@ body {
     width: 40px;
     height: 40px;
     margin-right: 10px;
+    transition: 0.3s;
 }
 
 #order-content #order-info-goods {
@@ -301,10 +302,15 @@ body {
     font-family: GilroyRegular, sans-serif;
     outline: 0;
     font-size: 20px;
-    border: 2px solid #1a53a8;
+    border: 2px solid rgba(26, 83, 168, 0.64);
     color: black;
     border-radius: 22px;
     padding: 11px 52px;
+    transition: 0.3s;
+}
+
+#order-content .order-input input:focus {
+    border-color: #002cff;
 }
 
 #order-content .order-input textarea {
@@ -362,7 +368,7 @@ body {
 
 #services-content {
     padding-bottom: 195px;
-    padding-top: 200px;
+    padding-top: 110px;
     max-width: 1200px;
     margin: 0 auto;
 }

@@ -34,7 +34,7 @@
                 Акция: При заказе первой перевозки получите скидку на следующую
             </div>
             <div id="main-title">
-                Transport planet
+                Transport Planet
             </div>
         </div>
     </div>
@@ -125,17 +125,6 @@
             </div>
             <div class="services-item">
                 <div class="services-item-img">
-                    <img src="images/trall.jpg" alt="">
-                </div>
-                <div class="services-item-name">
-                    Негабаритные перевозки
-                </div>
-                <div class="services-item-description">
-                    Отличительная черта - перевозка под определенный транспорт с разрешением на негабаритный груз
-                </div>
-            </div>
-            <div class="services-item">
-                <div class="services-item-img">
                     <img src="images/gazel.jpg" alt="">
                 </div>
                 <div class="services-item-name">
@@ -145,6 +134,18 @@
                     Быстро и с комфортом перевезем ваши вещи
                 </div>
             </div>
+            <div class="services-item">
+                <div class="services-item-img">
+                    <img src="images/trall.jpg" alt="">
+                </div>
+                <div class="services-item-name">
+                    Негабаритные перевозки
+                </div>
+                <div class="services-item-description">
+                    Отличительная черта - перевозка под определенный транспорт с разрешением на негабаритный груз
+                </div>
+            </div>
+
             <div class="services-item">
                 <div class="services-item-img">
                     <img src="images/ref.jpg" alt="">
@@ -185,7 +186,7 @@
                         </svg>
                         Откуда - куда
                     </div>
-                    <input type="text" placeholder="СПБ - Москва">
+                    <input type="text" id="from-to" placeholder="СПБ - Москва" class="order-input">
                 </div>
                 <div class="order-input">
                     <div class="order-input-title">
@@ -214,7 +215,7 @@
 </svg>
                         Тонаж / объем
                     </div>
-                    <input type="text" placeholder="15т / 10 куб">
+                    <input type="text" placeholder="15т / 10 куб" id="ton-size">
                 </div>
                 <div class="order-input">
                     <div class="order-input-title">
@@ -228,7 +229,7 @@
                         </svg>
                         Наименование груза
                     </div>
-                    <input type="text" placeholder="Стройматериалы">
+                    <input type="text" id="good-name" placeholder="Стройматериалы">
                 </div>
                 <div class="order-input">
                     <div class="order-input-title">
@@ -265,7 +266,7 @@
 </svg>
                         Дата загрузки / выгрузки
                     </div>
-                    <input type="text" placeholder="13.07 / 16.07">
+                    <input type="text" id="date" placeholder="13.07 / 16.07">
                 </div>
                 <div class="order-input">
                     <div class="order-input-title">
@@ -309,7 +310,7 @@
 </svg>
                         Желаемая стоимость
                     </div>
-                    <input type="text" placeholder="35 000 руб">
+                    <input type="text" id="price" placeholder="35 000 руб">
                 </div>
                 <div class="order-input">
                     <div class="order-input-title">
@@ -322,7 +323,7 @@
                         </svg>
                         Комментарий
                     </div>
-                    <textarea type="text" placeholder="Нужна охрана / погрузка правый бок"></textarea>
+                    <textarea type="text" id="comment" placeholder="Нужна охрана / погрузка правый бок"></textarea>
                 </div>
             </div>
             <div id="order-info-contacts">
@@ -344,7 +345,7 @@
                         </svg>
                         Название компании
                     </div>
-                    <input type="text" placeholder="TransportPlanet">
+                    <input type="text" id="company-name" placeholder="TransportPlanet">
                 </div>
                 <div class="order-input">
                     <div class="order-input-title">
@@ -355,7 +356,7 @@
                         </svg>
                         Имя контактного лица
                     </div>
-                    <input type="text" placeholder="Игорь Деннисович">
+                    <input type="text" id="client-name" placeholder="Игорь Деннисович">
                 </div>
                 <div class="order-input">
                     <div class="order-input-title">
@@ -385,7 +386,7 @@
 </svg>
                         Телефон
                     </div>
-                    <input type="text" placeholder="8 (911) *** - ** - **">
+                    <input type="text" id="client-phone" placeholder="8 (911) *** - ** - **">
                 </div>
                 <div class="order-input">
                     <div class="order-input-title">
@@ -399,7 +400,7 @@
 </svg>
                         Электронная почта
                     </div>
-                    <input type="text" placeholder="example@tp.com">
+                    <input type="text" id="client-mail"  placeholder="example@tp.com">
                 </div>
             </div>
         </form>
