@@ -47,7 +47,7 @@ body {
 #first-block-bg #first-block-color {
     width: 100%;
     height: 100%;
-    background: rgba(1, 1, 16, 0.24);
+    background: rgba(1, 1, 10, 0.44);
 }
 
 #first-block-bg #header {
@@ -97,11 +97,11 @@ body {
 }
 
 #first-block-bg #header #header-content #menu a:hover {
-    color: #1a53a8;
-    border-bottom-color: #1a53a8;
+    color: #175ec2;
+    border-bottom-color: #3982ee;
 }
 
-#first-block-bg #header #header-content #ati-number button {
+#first-block-bg #header #header-content #call-back button {
     cursor: pointer;
     padding: 10px 40px;
     outline: 0;
@@ -113,15 +113,23 @@ body {
     transition: 0.4s;
 }
 
-#first-block-bg #header #header-content #ati-number button:hover {
+#first-block-bg #header #header-content #call-back button:hover {
     border-color: #1a53a8;
-    color: #1a53a8;
+    color: #3982ee;
 }
 
 #main {
-    padding-bottom: 570px;
+    padding-bottom: 552px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+#main #stock-title {
+    font-family: RobotoRegular, sans-serif;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 280px;
+    color: #ffffff;
 }
 
 #main #main-title {
@@ -129,7 +137,7 @@ body {
     font-family: RobotoBlack, sans-serif;
     text-align: center;
     font-size: 60px;
-    margin-top: 300px;
+    margin-top: 40px;
 
 }
 
@@ -244,6 +252,7 @@ body {
     width: 573px;
     text-align: center;
 }
+
 #order #order-content form {
     display: flex;
     flex-wrap: wrap;
@@ -331,19 +340,19 @@ body {
     color: white;
 }
 
-#team-bg {
+#services-bg {
     background: url("../images/GreenTrack-bg.jpg");
     background-position: center;
     background-repeat: no-repeat;
 }
 
-#team-bg #team {
+#services-bg #services {
     width: 100%;
     height: 100%;
     background: rgba(1, 1, 16, 0.64);
 }
 
-#team-title {
+#services-title {
     padding-top: 110px;
     text-align: center;
     font-size: 38px;
@@ -351,19 +360,21 @@ body {
     color: white;
 }
 
-#team-content {
-    padding-bottom: 300px;
+#services-content {
+    padding-bottom: 195px;
     padding-top: 200px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.team-item-img img {
+.services-item-img img {
     width: 100%;
     height: 100%;
 }
 
-#team #team-content .team-item {
+#services #services-content .services-item {
+    cursor: pointer;
+    transition: 0.3s;
     outline: 0;
     display: flex;
     flex-direction: column;
@@ -375,21 +386,34 @@ body {
     text-align: center;
 }
 
-.team-item-img {
+.services-item-description {
+    width: 450px;
+    margin-bottom: 30px;
+}
+
+#services #services-content .services-item:hover {
+    transform: scale(1.1);
+}
+
+.services-item-img {
+    margin-top: 30px;
     text-align: center;
     overflow: hidden;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 350px;
+    height: 250px;
+    border-radius: 33px;
 }
 
-.team-item-name {
+.services-item-name {
     margin: 30px 0;
     font-size: 29px;
+    font-family: GilroyBold, sans-serif;
+    color: #3982ee;
 }
 
-.team-item-phone {
+.services-item-phone {
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .slick-prev, .slick-next {
@@ -419,20 +443,24 @@ body {
     margin: 0 auto;
     padding: 40px 0;
 }
+
 #footer-logo {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 #footer-logo span {
     font-size: 25px;
     color: white;
     font-family: GilroyBold, sans-serif;
     margin-left: 10px;
 }
+
 #footer-logo img {
     width: 60px;
 }
+
 .footer-item {
     text-align: center;
     width: 300px;
@@ -440,9 +468,123 @@ body {
     font-family: GilroyRegular, sans-serif;
     font-size: 18px;
 }
+
 .footer-item div {
     margin-bottom: 25px;
     color: #1a53a8;
     font-family: GilroyBold, sans-serif;
     font-size: 20px;
+}
+
+#call-back-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(57, 130, 238, 0.78);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#call-back-content {
+    position: relative;
+    color: black;
+    font-family: GilroyRegular, sans-serif;
+    width: 800px;
+    border-radius: 33px;
+    background: #ffffff;
+}
+
+#call-back-content-color {
+    background: rgba(1, 1, 10, 0.38);
+    width: 100%;
+    height: 100%;
+}
+
+#call-back-title {
+    font-family: GilroyBold, sans-serif;
+    font-size: 38px;
+    color: #1a53a8;
+    text-align: center;
+    margin: 30px auto;
+}
+
+#call-back-inputs {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.call-back-input input {
+    font-family: GilroyRegular, sans-serif;
+    outline: 0;
+    font-size: 20px;
+    border: 2px solid #1a53a8;
+    color: black;
+    border-radius: 22px;
+    padding: 11px 52px;
+}
+
+.call-back-input-title {
+    font-family: GilroyRegular, sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#call-back-title-action {
+    text-align: center;
+    margin: 50px auto;
+}
+
+#call-back-title-action button {
+    outline: 0;
+    background: #fff;
+    color: #1a53a8;
+    font-size: 30px;
+    border-radius: 23px;
+    font-family: GilroyBold, sans-serif;
+    padding: 12px 40px;
+    border: 3px solid #1a53a8;
+    transition: 0.5s;
+}
+
+
+#call-back-title-action button:hover {
+    background: #1a53a8;
+    color: white;
+}
+
+.call-back-input-title svg {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+#call-back-important {
+    font-family: GilroyRegular, sans-serif;
+    font-size: 20px;
+    margin: 20px auto;
+    width: 573px;
+    text-align: center;
+}
+
+#call-back-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+#call-back-close svg {
+    fill: gray;
+    width: 40px;
+    height: 40px;
+    transition: 0.4s;
+}
+
+#call-back-close:hover svg {
+    fill: #1a53a8;
 }

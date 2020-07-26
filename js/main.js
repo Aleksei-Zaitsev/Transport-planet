@@ -1,6 +1,16 @@
 $(document).ready(function () {
 
-    $('#team-content').slick({
+    $('.open-modal').click(() => {
+        $('#call-back-container').css('display', 'flex');
+    });
+
+    $('#call-bak-close-cancel, #call-bak-close-cancel2, #call-back-container').click((e) => {
+        if (e.target.id === 'call-back-close-cancel' || e.target.id === 'call-back-close-cancel2' || e.target.id === 'call-back-container') {
+            $('#call-back-container').css('display', 'none');
+        }
+    });
+
+    $('#services-content').slick({
         arrows: true,
         dots: false,
         infinite: true,
@@ -19,14 +29,19 @@ $(document).ready(function () {
             scrollTop: $("#order").offset().top
         }, 2000);
     });
-    $("#team-btn").click(function () {
+    $("#services-btn").click(function () {
         $('html, body').animate({
-            scrollTop: $("#team-bg").offset().top
+            scrollTop: $("#services-bg").offset().top
         }, 2000);
     });
     $("#plan-btn").click(function () {
         $('html, body').animate({
             scrollTop: $("#plan-container").offset().top
+        }, 2000);
+    });
+    $(".services-item").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#order").offset().top
         }, 2000);
     });
 });
