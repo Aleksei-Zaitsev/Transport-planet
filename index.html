@@ -5,12 +5,13 @@
     <title>TransportPlanet</title>
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/animate.min.css"/>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <div id="first-block-bg">
     <div id="first-block-color">
-        <div id="header">
+        <div id="header" class="wow animate__fadeIn" data-wow-delay="0.5s">
             <div id="header-content">
                 <div id="logo">
                     <img src="images/logo.png" alt="">
@@ -41,40 +42,83 @@
         </div>
         <div id="main">
 
-            <div id="main-title">
+            <div id="main-title" class="wow animate__fadeInDown" data-wow-delay="1s">
                 Transport Planet
             </div>
-            <div id="stock-title">
+            <div id="stock-title"  class="wow animate__fadeInDown" data-wow-delay="1.5s">
                 Акция: При заказе первой перевозки получите скидку на следующую
             </div>
         </div>
     </div>
 </div>
 <div id="about-container">
-    <div id="about-title">
+    <div id="about-title" class="wow animate__fadeInDown">
         О компании
     </div>
     <div id="about">
-        <div id="about-img">
+        <div id="about-img" class="wow animate__fadeInLeft">
             <img src="images/logo.png" alt="">
         </div>
-        <div id="about-text">
+        <div id="about-text" class="wow animate__fadeInRight">
             <span>Transport Planet</span> - это транспортно-экспедиторская компания (ТЭК), динамично развивающаяся на
             рынке
             транспортных услуг. Предоставляем все виды транспорта под отдельные и сборные грузы по всей России.
-            <span>Быстрое реагирование</span> на ваши заказы, <span>качественное предоставление</span> транспортных
-            услуг, <span>выгодная цена</span> для вас -
-            наши преимущества! <span>Наши клиенты - наши друзья</span>! Работать с нами <span>приятно</span> и <span>полезно</span>,
-            вашему бизнесу.
+
+        </div>
+        <div id="about-items">
+            <div class="about-item">
+                <div id="upper-word1" class="about-item-words ">
+                    Быстрое реагирование
+                </div>
+                <div class="about-item-img" id="delivery-img">
+                    <img src="images/speed-track.png" alt="">
+                </div>
+                <div id="lower-word1" class="about-item-words">
+                    на ваши заказы
+                </div>
+            </div>
+            <div class="about-item">
+                <div id="upper-word2" class="about-item-words">
+                    качественное предоставление
+                </div>
+                <div class="about-item-img" id="quality-img">
+                    <img src="images/quality.png" alt="">
+                </div>
+                <div id="lower-word2" class="about-item-words">
+                    транспортных услуг
+                </div>
+            </div>
+            <div class="about-item">
+                <div id="upper-word3" class="about-item-words">
+                   выгодная цена для вас
+                </div>
+                <div class="about-item-img" id="best-price-img">
+                    <img src="images/best-price.png" alt="">
+                </div>
+                <div id="lower-word3" class="about-item-words">
+                    наши преимущества
+                </div>
+            </div>
+            <div class="about-item">
+                <div id="upper-word4" class="about-item-words">
+                    Индивидуальный подход
+                </div>
+                <div class="about-item-img" id="contact-img">
+                    <img src="images/contact.png" alt="">
+                </div>
+                <div id="lower-word4" class="about-item-words">
+                    к каждому клиенту
+                </div>
+            </div>
         </div>
     </div>
 </div>
 <div id="plan-container">
-    <div id="plan-title">
+    <div id="plan-title" class="wow animate__fadeIn">
         Схема работы
     </div>
     <div id="plan-items">
-        <div class="plan-item">
+        <div class="plan-item wow animate__fadeInRight" data-wow-delay="0.5s">
             <div class="plan-item-bg">
                 <div class="plan-item-number">
                     1
@@ -84,7 +128,7 @@
                 Вы обращаетесь к нам
             </div>
         </div>
-        <div class="plan-item">
+        <div class="plan-item wow animate__fadeInRight" data-wow-delay="0.5s">
             <div class="plan-item-bg">
                 <div class="plan-item-number">
                     2
@@ -94,7 +138,7 @@
                 Мы составляем заявку
             </div>
         </div>
-        <div class="plan-item">
+        <div class="plan-item wow animate__fadeInRight" data-wow-delay="0.5s">
             <div class="plan-item-bg">
                 <div class="plan-item-number">
                     3
@@ -104,7 +148,7 @@
                 Вы оплачиваете доставку
             </div>
         </div>
-        <div class="plan-item">
+        <div class="plan-item wow animate__fadeInRight" data-wow-delay="0.5s">
             <div class="plan-item-bg">
                 <div class="plan-item-number">
                     4
@@ -118,10 +162,10 @@
 </div>
 <div id="services-bg">
     <div id="services">
-        <div id="services-title">
+        <div id="services-title" class="wow animate__fadeInDown">
             Услуги
         </div>
-        <div id="services-content">
+        <div id="services-content" class="wow animate__fadeInLeft">
             <div class="services-item">
                 <div class="services-item-img">
                     <img src="images/tent.png" alt="">
@@ -172,15 +216,15 @@
     </div>
 </div>
 <div id="order">
-    <div id="order-title">
+    <div id="order-title" class="wow animate__fadeInDown">
         Оставьте заявку
     </div>
     <div id="order-content">
-        <div id="order-content-important">
+        <div id="order-content-important" class="wow animate__fadeIn" data-wow-delay="2s">
             Оставляйте заявку на сайте, в рабочее время мы свяжемся с вами в течение 1 часа, для подтверждения заказа.
         </div>
         <form action="">
-            <div id="order-info-goods">
+            <div id="order-info-goods" class="wow animate__fadeInLeft">
                 <div class="inputs-category-title">
                     Информация о грузе:
                 </div>
@@ -337,7 +381,7 @@
                     <textarea type="text" id="comment" placeholder="Упаковка коробки / погрузка правый бок"></textarea>
                 </div>
             </div>
-            <div id="order-info-contacts">
+            <div id="order-info-contacts" class="wow animate__fadeInRight">
                 <div class="inputs-category-title">
                     О заказчике:
                 </div>
@@ -415,7 +459,7 @@
                 </div>
             </div>
         </form>
-        <div id="order-main-action">
+        <div id="order-main-action" class="wow animate__fadeInDown">
             <button id="order-main-action-btn">
                 Оставить заявку
             </button>
@@ -479,7 +523,7 @@
 </svg>
                         Ваш телефон
                     </div>
-                    <input type="text" placeholder="8 911 *******">
+                    <input type="text" placeholder="8 911 *******" id="call-number">
                 </div>
                 <div class="call-back-input">
                     <div class="call-back-input-title">
@@ -490,7 +534,7 @@
                         </svg>
                         Ваше имя
                     </div>
-                    <input type="text" placeholder="Игорь Деннисович">
+                    <input type="text" id="call-name" placeholder="Игорь Деннисович">
                 </div>
             </div>
         </form>
@@ -530,6 +574,13 @@
 
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/slick.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW({
+        animateClass: 'animate__animated',
+    }).init();
+</script>
+<script src="js/circletype.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

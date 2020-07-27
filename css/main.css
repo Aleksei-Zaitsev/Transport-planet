@@ -173,14 +173,43 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
 }
-
+#about-items {
+    margin-top: 60px;
+    width: 100%;
+    order: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.about-item {
+    color: #1a53a8;
+    font-family: GilroyBold, sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+#contact-img {
+    padding: 16px 0;
+}
+#best-price-img {
+    padding: 10px 0;
+}
+#quality-img {
+    padding-bottom: 10px;
+}
+#delivery-img {
+    padding: 15px 0 20px 0;
+}
+.about-item .about-item-img {
+    text-align: center;
+}
 #about #about-img img {
-    width: 385px;
+    width: 290px;
 }
 
 #about #about-text {
-    width: 475px;
+    width: 488px;
     font-size: 22px;
     text-indent: 20px;
     font-family: GilroyRegular, sans-serif;

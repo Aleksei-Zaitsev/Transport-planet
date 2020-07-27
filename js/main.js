@@ -15,10 +15,25 @@ $(document).ready(function () {
         clientPhone = $('#client-phone');
         clientMail = $('#client-mail');
         if (fromTo.val() && tonSize.val() && goodName.val() && date.val() && price.val() && comment.val() && comment.val() && clientName.val() && companyName.val() && clientPhone.val() && clientMail.val()) {
-            $('#order-success-container').css('left', '0px');
-                fromTo.css('box-shadow', '0 0 5px rgba(26, 245, 26, 0.45)');
-                fromTo.css('borderColor', 'rgba(26, 245, 26, 0.45)');
-                fromTo.parent('.order-input').children(".order-input-title").children('svg').css('fill', 'rgba(26, 245, 26, 0.45)');
+            $.ajax({
+                type: 'post',
+                url: 'mail.php',
+                data: 'fromTo=' + fromTo.val() + '&tonSize=' + tonSize.val()
+                    + '&goodName=' + goodName.val() + '&date=' + date.val()
+                    + '&price=' + price.val() + '&comment=' + comment.val()
+                    + '&clientName=' + clientName.val() + '&companyName=' + companyName.val()
+                    + '&clientPhone=' + clientPhone.val() + '&clientMail=' + clientMail.val(),
+                success: () => {
+                    $('#order-success-container').css('left', '0px');
+                },
+                error: () => {
+                    alert('Ошибка бронирования. Свяжитесь, пожалуйста, по номеру телефона.');
+                }
+            })
+
+            fromTo.css('box-shadow', '0 0 5px rgba(26, 245, 26, 0.45)');
+            fromTo.css('borderColor', 'rgba(26, 245, 26, 0.45)');
+            fromTo.parent('.order-input').children(".order-input-title").children('svg').css('fill', 'rgba(26, 245, 26, 0.45)');
 
             tonSize.css('box-shadow', '0 0 5px rgba(26, 245, 26, 0.45)');
             tonSize.css('borderColor', 'rgba(26, 245, 26, 0.45)');
@@ -55,6 +70,7 @@ $(document).ready(function () {
             clientMail.css('box-shadow', '0 0 5px rgba(26, 245, 26, 0.45)');
             clientMail.css('borderColor', 'rgba(26, 245, 26, 0.45)');
             clientMail.parent('.order-input').children(".order-input-title").children('svg').css('fill', 'rgba(26, 245, 26, 0.45)');
+
         } else {
             if (!fromTo.val()) {
                 fromTo.css('box-shadow', '0 0 5px 1px rgba(232, 12, 47, 0.75)');
@@ -349,6 +365,97 @@ $(document).ready(function () {
         $('#call-back-container').css('top', '0px');
     });
 
+    $('#call-back-title-action').click(function () {
+
+
+        let callNumber = $('#call-number');
+        let callName = $('#call-name');
+
+        if (callNumber.val() && callName.val()) {
+            $.ajax({
+                type: 'post',
+                url: 'phone-call.php',
+                data: 'callNumber=' + callNumber.val() + '&callName=' + callName.val(),
+                success: () => {
+                    $('#order-success-container').css('left', '0px');
+                    $('#call-back-container').css('top', '-1599px');
+                },
+                error: () => {
+                    $('#call-back-container').css('top', '-1599px');
+                    alert('Ошибка бронирования. Свяжитесь, пожалуйста, по номеру телефона.');
+                }
+
+            });
+
+            callNumber.css('box-shadow', '0 0 5px rgba(26, 245, 26, 0.45)');
+            callNumber.css('borderColor', 'rgba(26, 245, 26, 0.45)');
+            callNumber.parent('.order-input').children(".order-input-title").children('svg').css('fill', 'rgba(26, 245, 26, 0.45)');
+
+            callName.css('box-shadow', '0 0 5px rgba(26, 245, 26, 0.45)');
+            callName.css('borderColor', 'rgba(26, 245, 26, 0.45)');
+            callName.parent('.order-input').children(".order-input-title").children('svg').css('fill', 'rgba(26, 245, 26, 0.45)');
+
+        } else {
+            if (!callNumber.val()) {
+                callNumber.css('box-shadow', '0 0 5px 1px rgba(232, 12, 47, 0.75)');
+                callNumber.css('borderColor', 'rgba(232, 12, 47, 0.75)');
+                callNumber.parent('.order-input').children(".order-input-title").children('svg').css('fill', 'rgba(232, 12, 47, 0.75)');
+            }
+            if (callNumber.val()) {
+                callNumber.css('box-shadow', '0 0 5px rgba(26, 245, 26, 0.45)');
+                callNumber.css('borderColor', 'rgba(26, 245, 26, 0.45)');
+                callNumber.parent('.order-input').children(".order-input-title").children('svg').css('fill', 'rgba(26, 245, 26, 0.45)');
+            }
+
+            if (!callName.val()) {
+                callName.css('box-shadow', '0 0 5px 1px rgba(232, 12, 47, 0.75)');
+                callName.css('borderColor', 'rgba(232, 12, 47, 0.75)');
+                callName.parent('.order-input').children(".order-input-title").children('svg').css('fill', 'rgba(232, 12, 47, 0.75)');
+            }
+            if (callName.val()) {
+                callName.css('box-shadow', '0 0 5px rgba(26, 245, 26, 0.45)');
+                callName.css('borderColor', 'rgba(26, 245, 26, 0.45)');
+                callName.parent('.order-input').children(".order-input-title").children('svg').css('fill', 'rgba(26, 245, 26, 0.45)');
+            }
+        }
+    });
+    let callNumber = document.getElementById('call-number');
+    callNumber.onblur = function () {
+        if (callNumber.value === '') {
+            callNumber.style.boxShadow = '0 0 5px 1px rgba(232, 12, 47, 0.75)';
+            callNumber.style.borderColor = 'rgba(232, 12, 47, 0.75)';
+            callNumber.parentElement.firstElementChild.firstElementChild.style.fill = 'rgba(232, 12, 47, 0.75)'
+        }
+        if (callNumber.value) {
+            callNumber.classList.add('invalid');
+            callNumber.style.boxShadow = '0 0 5px 1px rgba(26, 245, 26, 0.45)';
+            callNumber.style.borderColor = 'rgba(26, 245, 26, 0.45)';
+            callNumber.parentElement.firstElementChild.firstElementChild.style.fill = 'rgba(26, 245, 26, 0.45)'
+        }
+    };
+    callNumber.onfocus = function () {
+        callNumber.style.boxShadow = '0 0 0 0 rgba(26, 245, 26, 0.45)';
+        callNumber.style.borderColor = 'rgba(26, 83, 168, 0.64)';
+    };
+    let callName = document.getElementById('call-name');
+    callName.onblur = function () {
+        if (callName.value === '') {
+            callName.style.boxShadow = '0 0 5px 1px rgba(232, 12, 47, 0.75)';
+            callName.style.borderColor = 'rgba(232, 12, 47, 0.75)';
+            callName.parentElement.firstElementChild.firstElementChild.style.fill = 'rgba(232, 12, 47, 0.75)'
+        }
+        if (callName.value) {
+            callName.classList.add('invalid');
+            callName.style.boxShadow = '0 0 5px 1px rgba(26, 245, 26, 0.45)';
+            callName.style.borderColor = 'rgba(26, 245, 26, 0.45)';
+            callName.parentElement.firstElementChild.firstElementChild.style.fill = 'rgba(26, 245, 26, 0.45)'
+        }
+    };
+    callName.onfocus = function () {
+        callName.style.boxShadow = '0 0 0 0 rgba(26, 245, 26, 0.45)';
+        callName.style.borderColor = 'rgba(26, 83, 168, 0.64)';
+    };
+
     $('#call-bak-close-cancel, #call-bak-close-cancel2, #call-back-container').click((e) => {
         if (e.target.id === 'call-back-close-cancel' || e.target.id === 'call-back-close-cancel2' || e.target.id === 'call-back-container') {
             $('#call-back-container').css('top', '-1599px');
@@ -362,6 +469,25 @@ $(document).ready(function () {
             $('#order-success-container').css('left', '-1599px');
         }
     });
+
+    // Строчки дугой в блоке О компании
+
+    const upperWords1 = new CircleType(document.getElementById('upper-word1'));
+    upperWords1.radius(130).dir(1);
+    const lowerWord1 = new CircleType(document.getElementById('lower-word1'));
+    lowerWord1.radius(130).dir(-1);
+    const upperWords2 = new CircleType(document.getElementById('upper-word2'));
+    upperWords2.radius(130).dir(1);
+    const lowerWord2 = new CircleType(document.getElementById('lower-word2'));
+    lowerWord2.radius(130).dir(-1);
+    const upperWords3 = new CircleType(document.getElementById('upper-word3'));
+    upperWords3.radius(130).dir(1);
+    const lowerWord3 = new CircleType(document.getElementById('lower-word3'));
+    lowerWord3.radius(130).dir(-1);
+    const upperWords4 = new CircleType(document.getElementById('upper-word4'));
+    upperWords4.radius(130).dir(1);
+    const lowerWord4 = new CircleType(document.getElementById('lower-word4'));
+    lowerWord4.radius(130).dir(-1);
 
     // Карусель по услугам
     $('#services-content').slick({
