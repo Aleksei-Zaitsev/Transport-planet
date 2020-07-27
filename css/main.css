@@ -253,7 +253,7 @@ body {
 }
 
 #order #order-content {
-    padding-top: 70px;
+    padding-top: 20px;
     max-width: 1200px;
     margin: 0 auto;
 
@@ -496,33 +496,30 @@ body {
     font-size: 20px;
 }
 
+
 #call-back-container {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(57, 130, 238, 0.78);
     position: fixed;
     width: 100%;
     height: 100%;
-    top: 0;
+    top: -1599px;
     left: 0;
-    transition: 0.2s;
+    transition: 1.2s;
 }
 
 #call-back-content {
     position: relative;
     color: black;
     font-family: GilroyRegular, sans-serif;
+    border: 5px solid #1a53a8;
     width: 800px;
     border-radius: 33px;
     background: #ffffff;
+    transition: 1s;
 }
 
-#call-back-content-color {
-    background: rgba(1, 1, 10, 0.38);
-    width: 100%;
-    height: 100%;
-}
 
 #call-back-title {
     font-family: GilroyBold, sans-serif;
@@ -609,3 +606,58 @@ body {
 #call-back-close:hover svg {
     fill: #1a53a8;
 }
+
+#order-success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: -1599px;
+    height: 100%;
+    width: 100%;
+    transition: 1.2s;
+}
+#order-success-content {
+    margin-bottom: 200px;
+    position: relative;
+    width: 800px;
+    background: white;
+    border-radius: 33px;
+    border: 5px solid #1a53a8;
+}
+#order-success-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+#order-success-close svg {
+    fill: gray;
+    width: 40px;
+    height: 40px;
+}
+
+#order-success-close:hover svg {
+    fill: #1a53a8;
+}
+#order-success-title {
+    font-family: GilroyBold, sans-serif;
+    font-size: 38px;
+    color: #1a53a8;
+    text-align: center;
+    margin: 50px auto;
+}
+
+#order-success-text {
+    line-height: 30px;
+    font-family: GilroyRegular, sans-serif;
+    font-size: 20px;
+    margin: 50px auto 100px;
+    width: 630px;
+    text-align: center;
+}
+#order-success-text span {
+    color: #1a53a8;
+    font-size: 22px;
+}
+
