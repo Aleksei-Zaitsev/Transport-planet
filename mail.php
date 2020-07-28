@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comment = $_POST['comment'];
     $clientMail = $_POST['clientMail'];
 
-    $content = $clientName . ' оствавил заявку на на перевозку.\n ' . $fromTo . ' ' . $goodName . '  ' . $tonSize . '.\n Планируемая погрузка/выгрузка - ' . $date . '.\n Желаемая стоимость - ' . $price . '.\n Комментарий от заказчика - ' . $comment . '.\n ' . $clientName . ' из компании ' . $companyName . '.\n Контактная информация - телефон: ' . $clientPhone . ', e-mail:' . '. Его телефон: ' . $clientMail . '.';
+    $content = $clientName . ' остаавил заявку на на перевозку.\n ' . $fromTo . ' ' . $goodName . '  ' . $tonSize . '.\n Планируемая погрузка/выгрузка - ' . $date . '.\n Желаемая стоимость - ' . $price . '.\n Комментарий от заказчика - ' . $comment . '.\n ' . $clientName . ' из компании ' . $companyName . '.\n Контактная информация - телефон: ' . $clientPhone . ', e-mail:' . '. e-mail: ' . $clientMail . '.';
 
     $success = mail("leha.0906@yandex.ru", 'Заявка на перевозку', $content);
 

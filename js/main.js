@@ -489,14 +489,36 @@ $(document).ready(function () {
     const lowerWord4 = new CircleType(document.getElementById('lower-word4'));
     lowerWord4.radius(130).dir(-1);
 
+    //Меню открыть/закрыть
+    $('#menu-btn button').click(function () {
+        $('#menu').css('display', 'flex');
+    })
+    $('#menu a').click(function () {
+        $('#menu').css('display', 'none');
+    })
+    $('#menu #menu-close').click(function () {
+        $('#menu').css('display', 'none');
+    })
+
     // Карусель по услугам
     $('#services-content').slick({
-        arrows: true,
         dots: false,
         infinite: true,
         speed: 300,
         slidesToShow: 2,
         slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1070,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false,
+                    arrows: true
+                }
+            }
+        ]
     });
 
     // Медленный скролл к блокам

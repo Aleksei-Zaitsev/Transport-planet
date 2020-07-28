@@ -79,11 +79,15 @@ body {
 #first-block-bg #header #header-content #logo img {
     width: 60px;
 }
+#menu-title {
+    display: none;
+}
 
 #first-block-bg #header #header-content #menu {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 1s;
 }
 
 #first-block-bg #header #header-content #menu a {
@@ -95,7 +99,26 @@ body {
     transition: 0.4s;
     padding-bottom: 5px;
 }
-
+#first-block-bg #header #header-content #menu-btn {
+    display: none;
+}
+#first-block-bg #header #header-content #menu-btn button {
+    height: 58px;
+    cursor: pointer;
+    width: 137px;
+    padding: 7px 1px;
+    outline: 0;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 17px;
+    color: white;
+    transition: 0.4s;
+    order: 5;
+}
+#menu-close {
+    display: none;
+}
 #first-block-bg #header #header-content #menu a:hover {
     transform: scale(1.1);
     border-bottom-color: #3982ee;
@@ -156,7 +179,7 @@ body {
 }
 
 #about-container {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     padding-top: 110px;
     padding-bottom: 110px;
