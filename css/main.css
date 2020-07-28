@@ -142,6 +142,12 @@ body {
     /*color: #3982ee;*/
     background: #1a53a8;
 }
+
+#first-block-bg #header #header-content #menu-btn button:hover {
+    border-color: #1a53a8;
+    /*color: #3982ee;*/
+    background: #1a53a8;
+}
 #header-contacts {
     text-align: right;
 }
