@@ -160,7 +160,10 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-
+#contacts-text span {
+    text-decoration: none;
+    color: white;
+}
 #main #stock-title {
     font-family: RobotoRegular, sans-serif;
     text-align: center;
@@ -558,7 +561,10 @@ body {
     font-family: GilroyBold, sans-serif;
     font-size: 20px;
 }
-
+#contacts span {
+    text-decoration: none;
+    color: white;
+}
 
 #call-back-container {
     display: flex;
