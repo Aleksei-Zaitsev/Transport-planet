@@ -38,6 +38,10 @@ body {
     font-family: GilroyRegular, sans-serif;
 }
 
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
 #first-block-bg {
     background: url("../images/Track-on-bridge-bg.jpg");
     background-position: center top;
@@ -404,7 +408,7 @@ body {
     outline: 0;
     width: 217px;
     font-size: 20px;
-    border: 2px solid #1a53a8;
+    border: 2px solid rgba(26, 83, 168, 0.64);
     color: black;
     border-radius: 22px;
     padding: 11px 52px;

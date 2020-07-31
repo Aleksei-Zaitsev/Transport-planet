@@ -1,6 +1,7 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $fromTo = $_POST['fromTo'];
     $tonSize = $_POST['tonSize'];
     $goodName = $_POST['goodName'];
@@ -12,9 +13,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comment = $_POST['comment'];
     $clientMail = $_POST['clientMail'];
 
-    $content = $clientName . ' остаавил заявку на на перевозку.\n ' . $fromTo . ' ' . $goodName . '  ' . $tonSize . '.\n Планируемая погрузка/выгрузка - ' . $date . '.\n Желаемая стоимость - ' . $price . '.\n Комментарий от заказчика - ' . $comment . '.\n ' . $clientName . ' из компании ' . $companyName . '.\n Контактная информация - телефон: ' . $clientPhone . ', e-mail:' . '. e-mail: ' . $clientMail . '.';
+    $first_line = $clientName . " оставил заявку на на перевозку.\r\n";
+    $second_line = $fromTo . ", " . $goodName . ", " . $tonSize . ".\r\n";
+    $third_line = "Планируемая погрузка/выгрузка - " . $date . ".\r\n";
+    $forth_line = "Желаемая стоимость - " . $price . ".\r\n";
+    $fith_line = "Комментарий от заказчика - " . $comment . ".\r\n";
+    $sixth_line = $clientName . " из компании " . $companyName . ".\r\n";
+    $seventh_line = "Контактная информация - телефон: " . $clientPhone . ". e-mail: " . $clientMail . ".";
 
-    $success = mail("leha.0906@yandex.ru", 'Заявка на перевозку', $content);
+    $content = "<html>
+    <body>
+        <h1 style='color: #1a53a8; text-align: center; font-size: 30px; font-family: sans-serif;'>Заявка</h1>
+        <p style='font-size: 23px; font-family: sans-serif;'>$first_line</p>
+        <p style='font-size: 23px; font-family: sans-serif;'>$second_line</p>
+        <p  style='font-size: 23px; font-family: sans-serif;'>$third_line</p>
+        <p style='font-size: 23px; font-family: sans-serif;'>$forth_line</p>
+        <p style='font-size: 23px; font-family: sans-serif;'>$fith_line</p>
+        <p style='font-size: 23px; font-family: sans-serif;'>$sixth_line</p>
+        <p style='font-size: 23px; font-family: sans-serif;'>$seventh_line</p>
+    </body>
+    </html>
+    ";
+
+
+    $headers = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+
+    $success = mail("LogisticsPlanet1@mail.ru, Aleksei.Zaitsev.V@yandex.ru", 'Заявка на перевозку', $content, $headers);
 
     if ($success) {
         http_response_code(200);
