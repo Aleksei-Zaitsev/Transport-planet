@@ -165,6 +165,10 @@
 }
 
 @media screen and (max-width: 730px) {
+    #scroll-up-btn {
+        display: none;
+    }
+
     #plan-items .plan-item {
         margin: 30px 0 30px 30px;
     }
@@ -227,8 +231,9 @@
 
 @media screen and (max-width: 563px) {
     #first-block-bg #header {
-         border-bottom: 0 solid rgba(255, 255, 255, 0.45);
+        border-bottom: 0 solid rgba(255, 255, 255, 0.45);
     }
+
     #order-success-text {
         margin: 50px auto 67px;
         width: 97%;

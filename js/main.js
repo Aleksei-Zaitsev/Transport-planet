@@ -84,11 +84,12 @@ $(document).ready(function () {
         $('#call-back-container').css('top', '0px');
     });
 
+    let callNumber = $('#call-number');
+    let callName = $('#call-name');
+    let arrInputsCall = [callName, callNumber]
+
     $('#call-back-title-action').click(function () {
 
-
-        let callNumber = $('#call-number');
-        let callName = $('#call-name');
 
         if (callNumber.val() && callName.val()) {
             $.ajax({
@@ -105,74 +106,45 @@ $(document).ready(function () {
                 }
 
             });
+            for ( let i = 0; i < 2; i++) {
+                arrInputsCall[i].css('box-shadow', '0 0 5px rgba(26, 245, 26, 0.45)');
+                arrInputsCall[i].css('borderColor', 'rgba(26, 245, 26, 0.45)');
+                arrInputsCall[i].parent('.order-input').children(".order-input-title").children('svg').css('fill', 'rgba(26, 245, 26, 0.45)');
 
-            callNumber.css('box-shadow', '0 0 5px rgba(26, 245, 26, 0.45)');
-            callNumber.css('borderColor', 'rgba(26, 245, 26, 0.45)');
-            callNumber.parent('.order-input').children(".order-input-title").children('svg').css('fill', 'rgba(26, 245, 26, 0.45)');
-
-            callName.css('box-shadow', '0 0 5px rgba(26, 245, 26, 0.45)');
-            callName.css('borderColor', 'rgba(26, 245, 26, 0.45)');
-            callName.parent('.order-input').children(".order-input-title").children('svg').css('fill', 'rgba(26, 245, 26, 0.45)');
-
+            }
         } else {
-            if (!callNumber.val()) {
-                callNumber.css('box-shadow', '0 0 5px 1px rgba(232, 12, 47, 0.75)');
-                callNumber.css('borderColor', 'rgba(232, 12, 47, 0.75)');
-                callNumber.parent('.order-input').children(".order-input-title").children('svg').css('fill', 'rgba(232, 12, 47, 0.75)');
-            }
-            if (callNumber.val()) {
-                callNumber.css('box-shadow', '0 0 5px rgba(26, 245, 26, 0.45)');
-                callNumber.css('borderColor', 'rgba(26, 245, 26, 0.45)');
-                callNumber.parent('.order-input').children(".order-input-title").children('svg').css('fill', 'rgba(26, 245, 26, 0.45)');
-            }
-
-            if (!callName.val()) {
-                callName.css('box-shadow', '0 0 5px 1px rgba(232, 12, 47, 0.75)');
-                callName.css('borderColor', 'rgba(232, 12, 47, 0.75)');
-                callName.parent('.order-input').children(".order-input-title").children('svg').css('fill', 'rgba(232, 12, 47, 0.75)');
-            }
-            if (callName.val()) {
-                callName.css('box-shadow', '0 0 5px rgba(26, 245, 26, 0.45)');
-                callName.css('borderColor', 'rgba(26, 245, 26, 0.45)');
-                callName.parent('.order-input').children(".order-input-title").children('svg').css('fill', 'rgba(26, 245, 26, 0.45)');
+            for (let y = 0; y < 2; y++) {
+                if (!arrInputsCall[y].val()) {
+                    arrInputsCall[y].css('box-shadow', '0 0 5px 1px rgba(232, 12, 47, 0.75)');
+                    arrInputsCall[y].css('borderColor', 'rgba(232, 12, 47, 0.75)');
+                    arrInputsCall[y].parent('.order-input').children(".order-input-title").children('svg').css('fill', 'rgba(232, 12, 47, 0.75)');
+                }
+                if (arrInputsCall[y].val()) {
+                    arrInputsCall[y].css('box-shadow', '0 0 5px rgba(26, 245, 26, 0.45)');
+                    arrInputsCall[y].css('borderColor', 'rgba(26, 245, 26, 0.45)');
+                    arrInputsCall[y].parent('.call-back-input').children(".call-back-input-title").children('svg').css('fill', 'rgba(26, 245, 26, 0.45)');
+                }
             }
         }
     });
-    let callNumber = document.getElementById('call-number');
-    callNumber.onblur = function () {
-        if (callNumber.value === '') {
-            callNumber.style.boxShadow = '0 0 5px 1px rgba(232, 12, 47, 0.75)';
-            callNumber.style.borderColor = 'rgba(232, 12, 47, 0.75)';
-            callNumber.parentElement.firstElementChild.firstElementChild.style.fill = 'rgba(232, 12, 47, 0.75)'
-        }
-        if (callNumber.value) {
-            callNumber.classList.add('invalid');
-            callNumber.style.boxShadow = '0 0 5px 1px rgba(26, 245, 26, 0.45)';
-            callNumber.style.borderColor = 'rgba(26, 245, 26, 0.45)';
-            callNumber.parentElement.firstElementChild.firstElementChild.style.fill = 'rgba(26, 245, 26, 0.45)'
-        }
-    };
-    callNumber.onfocus = function () {
-        callNumber.style.boxShadow = '0 0 0 0 rgba(26, 245, 26, 0.45)';
-        callNumber.style.borderColor = 'rgba(26, 83, 168, 0.64)';
-    };
-    let callName = document.getElementById('call-name');
-    callName.onblur = function () {
-        if (callName.value === '') {
-            callName.style.boxShadow = '0 0 5px 1px rgba(232, 12, 47, 0.75)';
-            callName.style.borderColor = 'rgba(232, 12, 47, 0.75)';
-            callName.parentElement.firstElementChild.firstElementChild.style.fill = 'rgba(232, 12, 47, 0.75)'
-        }
-        if (callName.value) {
-            callName.classList.add('invalid');
-            callName.style.boxShadow = '0 0 5px 1px rgba(26, 245, 26, 0.45)';
-            callName.style.borderColor = 'rgba(26, 245, 26, 0.45)';
-            callName.parentElement.firstElementChild.firstElementChild.style.fill = 'rgba(26, 245, 26, 0.45)'
-        }
-    };
-    callName.onfocus = function () {
-        callName.style.boxShadow = '0 0 0 0 rgba(26, 245, 26, 0.45)';
-        callName.style.borderColor = 'rgba(26, 83, 168, 0.64)';
+
+    for ( let r = 0; r < 2; r++) {
+        arrInputsCall[r].blur(function () {
+            if (!  arrInputsCall[r].val()) {
+                arrInputsCall[r].css('box-shadow', '0 0 5px 1px rgba(232, 12, 47, 0.75)');
+                arrInputsCall[r].css('borderColor', 'rgba(232, 12, 47, 0.75)');
+                arrInputsCall[r].parent('.call-back-input').children(".call-back-input-title").children('svg').css('fill', 'rgba(232, 12, 47, 0.75)');
+            } else {
+                arrInputsCall[r].css('box-shadow', '0 0 5px rgba(26, 245, 26, 0.45)');
+                arrInputsCall[r].css('borderColor', 'rgba(26, 245, 26, 0.45)');
+                arrInputsCall[r].parent('.call-back-input').children(".call-back-input-title").children('svg').css('fill', 'rgba(26, 245, 26, 0.45)');
+            }
+        })
+        arrInputsCall[r].focus( function () {
+            arrInputsCall[r].css('box-shadow', '0 0 5px rgba(26, 245, 26, 0.45)');
+            arrInputsCall[r].css('borderColor', 'rgba(26, 83, 168, 0.64)');
+            arrInputsCall[r].parent('.call-back-input').children(".call-back-input-title").children('svg').css('fill', 'rgba(26, 83, 168, 0.64)');
+        })
     };
 
     $('#call-bak-close-cancel, #call-bak-close-cancel2, #call-back-container').click((e) => {
@@ -252,33 +224,38 @@ $(document).ready(function () {
         ]
     });
 
-
+    //Scroll up
+    $("#scroll-up-btn button").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#header").offset().top
+        }, 1200)
+    });
     // Inputs
 
     // Медленный скролл к блокам
     $("#about-btn").click(function () {
         $('html, body').animate({
             scrollTop: $("#about-container").offset().top
-        }, 2000);
+        }, 1200);
     });
     $("#order-btn").click(function () {
         $('html, body').animate({
             scrollTop: $("#order").offset().top
-        }, 2000);
+        }, 1200);
     });
     $("#services-btn").click(function () {
         $('html, body').animate({
             scrollTop: $("#services-bg").offset().top
-        }, 2000);
+        }, 1200);
     });
     $("#plan-btn").click(function () {
         $('html, body').animate({
             scrollTop: $("#plan-container").offset().top
-        }, 2000);
+        }, 1200);
     });
     $(".services-item").click(function () {
         $('html, body').animate({
             scrollTop: $("#order").offset().top
-        }, 2000);
+        }, 1200);
     });
 });
